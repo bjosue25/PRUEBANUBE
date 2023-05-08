@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hotel Uleam</title>
+	<link rel="stylesheet" href="resources/css/estilos_inicio.css">
+	<link rel="stylesheet" href="https:fonts.googleapis.com/css2?family=Chilanka&family=Sansita+Swashed&display=swap">
+	<link rel="shortcut icon" href="resources/images/palma.png">
+	<link href='http://fonts.googleapis.com/css?family=Lobster|Pacifico:400,700,300|Roboto:400,100,100italic,300,300italic,400italic,500italic,500' ' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,500,600,700,300' rel='stylesheet' type='text/css'>
+	<script src="https://kit.fontawesome.com/91d71729cc.js" crossorigin="anonymous"></script>
+</head> 
+<body>
+
+	<div class="header">
+		<h1>Hotel Uleam</h1>
+		<div class="navegador">
+			<ul>
+				<li><a href="/">Inicio</a> <i class="fas fa-hotel"></i> </li>
+				<li><a href="habitaciones">Habitaciones</a> <i class="fas fa-bed"></i> </li>
+				<li><a href="buscar">Reservar</a> <i class="fas fa-search"></i> </li>
+				<li><a href="login">Iniciar Sesión</a> <i class="fas fa-sign-in-alt"></i>  </li>
+				<li><a href="register">Registrarse</a> <i class="fas fa-door-open"></i> </li>
+			</ul>
+		</div>
+	</div>
+			<div class="main">
+				<div class="login-head">
+					<h1>Hotel Uleam</h1>
+				</div>
+				<div  class="wrap">
+					  <div class="Regisration">
+						  <div class="Regisration-head">
+							<h2>Iniciar Sesión</h2>
+						  </div>
+						  <form action="/auth" method="POST" class="form-codigo" id="form-codigo" onsubmit="return validar()">
+							
+							<div class="input-group Correo">
+							<input type="text" id="Correo" name="correo" value="Correo Electrónico" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Correo Electronico';}" 
+							autofocus >
+							<p class="error" id="error"></p>
+						</div>
+							<div class="input-group Contraseña">
+							<input type="password" id="Contra" name="contra1" value="Contraseña" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Contraseña';}" 
+							autofocus required>
+							<p class="error" id="error"></p>
+						</div>
+							
+							<div class="input-group">
+							<label class="checkbox"><input type="checkbox" name="checkbox" checked required><i></i>Acepto los terminos y Condiciones</label>
+						</div>
+											 
+							<div class="submit">
+								<input type="submit" value="Iniciar Sesion" >
+							</div>
+							<h3 class="correcto"></h3>											
+					  </form>
+				</div>
+
+		</div>
+					<div>
+						<p>Hotel <a href="https://www.uleam.edu.ec/">Uleam</a></p>
+					</div>
+		  </div>
+
+			  <!--Pie de pagina-->
+		<div class="footer">
+			<div class="break">
+				<div class="direccion">
+					<h4>Dirección:</h4>
+					<p>Av. Circunvalacion, Manta</p>
+				</div>
+				<div class="contacto">
+					<h4>Contactos:</h4>
+					<p>Tel: +593 998544663</p>
+					<p>Email: Uleam@gamil.com</p>
+				</div>
+				<div class="sobre">
+					<h4>Sobre nosotros:</h4>
+					<p>Somos un hotel de calidad y profesionalismo. Contamos con habitaciones equipadas para ofrecer confort.</p>
+				</div>
+			</div>
+			<div class="derechos">
+				<h4>HOTEL ULEAM @ 2021</h4>
+			</div>
+		</div>
+		<script src="resources/JS/validar_inicio.js" type="text/javascript"></script>
+
+	<div class="login-form">
+		<h1>Login con Node Js</h1>
+		<form action="auth" method="POST">
+			<input type="text" name="user" placeholder="User" autofocus required>
+			<input type="password" name="pass" placeholder="Password" required>
+			<input type="submit" class="btn-login" value="Login">
+		</form>
+		<a href="register" class="btn-register">Register</a>
+		
+		
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+   <% if (typeof alert != "undefined")  { %>
+    <script>
+    Swal.fire({
+      title:'<%= alertTitle %>',
+      text:'<%= alertMessage %>',
+      icon:'<%= alertIcon %>',
+      showConfirmButton: <%= showConfirmButton %>,
+      timer: <%= timer %>
+    }).then(()=>{
+      window.location='/<%= ruta %>'
+    })
+    </script>
+  <% } %>
+	</div>
+</body>
+</html>

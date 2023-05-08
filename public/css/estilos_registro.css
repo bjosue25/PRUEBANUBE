@@ -1,0 +1,109 @@
+/*Encabezado principal*/
+.header{
+    font-family: 'Sansita Swashed', cursive;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(20, 17, 13, 0.329);
+}
+
+/*letras barra*/
+.navegador ul{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+/*Ancho de barra trasera*/
+.navegador ul li{
+    list-style: none;
+    margin-left: 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/*color letra*/
+.navegador ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/*fondo letra*/
+.navegador ul li a:hover{
+    background-color: rgb(146, 165, 148);
+    padding: 10px;
+}
+
+/* Imagen de fondo*/
+body{
+    background-image: url(../images/hotel.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    height: 150vh;
+}
+
+/*Fondo registro*/
+.form-register{
+    overflow: hidden;
+    width: 350px;
+    background: #24303c;
+    padding: 40px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 6px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px blue;
+    
+   
+    
+}
+/* Encabezado Registro*/
+.form-register h4{
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #fff;
+
+}
+
+/* cuadro de texto*/
+.controls{
+    width: 93%;
+    background: #fff;
+    padding: 6px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border: 4px solid rgb(50,50,225);
+    font-family: 'calibri';
+    font-size: 18px;
+    color: black;
+   
+}
+
+
+
+
+/*CSS de pie de pagina*/
+.footer{
+    background-color:black;
+    padding-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 3%;
+}
+.break{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 80px;
+    text-align: center;
+    color: white;
+}
+@media(max-width : 600px){
+    .break{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+    }
+}

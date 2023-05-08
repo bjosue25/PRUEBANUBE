@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/buscar_estilos.css">
+    <link rel="stylesheet" href="https:fonts.googleapis.com/css2?family=Chilanka&family=Sansita+Swashed&display=swap">
+    <link rel="shortcut icon" href="resources/images/palma.png">
+    <script src="https://kit.fontawesome.com/91d71729cc.js" crossorigin="anonymous"></script>
+    <title>Haga su Reserva</title>
+
+        <!--script de nesesario para la validacion de la fecha-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    
+        <!--funcion de la validacion de la fecha-->
+        <script>
+        $(function rangofecha() {
+        $('input[name="fecha"]').daterangepicker({
+            opens: 'left'
+        }, function(empezar, terminar, label) {
+            console.log("El nuevo formato de fecha: " + empezar.format('DD-MM-YYYY') + ' para ' + terminar.format('DD-MM-YYYY'));
+        });
+        });
+        </script>
+
+    <!--Validacion de la habitacion-->
+    <script type="text/javascript"> 
+
+            function validarhabitacion() { 
+                var adultos = document.getElementById("adultos");
+                var ninos = document.getElementById("ninos"); 
+                var habitaciones = document.getElementById("habitaciones");
+                
+                if (adultos.value == 3 && habitaciones.value <2){ 
+                    alert("Si son dos adultos minimo 2 habitaciones"); 
+                    return false; 
+                }
+
+                else if (adultos.value == 4 && habitaciones.value < 2){
+                    alert("Si son 4 adultos minimos 2 habitaciones")
+                    return false;
+                }
+
+                else if (adultos.value == 5 && nabitaciones.value <3){
+                    alert("Si son 5 adultos minimos 3 habitaciones")
+                    return false;
+                }
+
+                return true
+            } 
+    </script>
+    
+</head>
+<body>
+    <div class="header">
+        <h1>Hotel Uleam</h1>
+        <div class="navegador">
+            <ul>
+                <li><a href="/">Inicio</a> <i class="fas fa-hotel"></i> </li>
+                <li><a href="habitaciones">Habitaciones</a> <i class="fas fa-bed"></i> </li>
+                <li><a href="buscar">Reservar </a> <i class="fas fa-search"></i> </li>
+                <% if (login) { %>                                
+                  <li><a href="logout" class="a-logout">Cerrar Sesión</a> <i class="fas fa-door-closed"></i></li> 
+                  <li><%= name %> <i class="fas fa-user-check"></i> </li>
+              <%} else { %>
+                  <li><a href="login" class="a-login">Iniciar Sesión</a> <i class="fas fa-sign-in-alt"></i> </li> 
+                  <li><a href="register" class="a-login"><%= name %> </a> <i class="fas fa-door-open"></i> </li> 
+              <% } %> 
+            </ul>
+        </div>
+    </div>
+
+    <form name="formulario" action="habitaciones" onsubmit="return validarhabitacion()" method="get">
+
+        <h2>Reservar Habitación</h2>
+        <div class="contenedor">
+
+            <div class="item">
+                <label class="fechas" for="fecha"><strong>Fecha de llegada-Salida:</strong></label><br>
+                <input type="text" name="fecha" autofocus required/>
+            </div>
+
+            <div class="item">
+                <label class="adultos" for="adultos"><strong>Adultos</strong></label><br>
+                <select id="adultos" name="adultos">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                </select><br>
+            </div>
+
+            <div class="item">
+                <label class="ninos" for="ninos"><strong>Niños</strong></label><br>
+                <select id="ninos" name="ninos" value="0">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select><br>
+            </div>
+
+            <div class="room">
+                <label class="habitaciones" for="habitaciones"><strong>Habitaciones</strong></label><br>
+                <select id="habitaciones" name="habitaciones">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select><br>
+            </div>
+
+            <input type="submit" value="Verificar Disponibilidad">
+
+            <p><a href="">Necesita ayuda? </a></p>
+            
+        </div>
+    </form>
+
+    <!--Pie de pagina-->
+    <div class="footer">
+        <div class="break">
+            <div class="direccion">
+                <h4>Dirección:</h4>
+                <p>Av. Circunvalacion, Manta</p>
+            </div>
+            <div class="contacto">
+                <h4>Contactos:</h4>
+                <p>Tel: +593 998544663</p>
+                <p>Email: Uleam@gamil.com</p>
+            </div>
+            <div class="sobre">
+                <h4>Sobre nosotros:</h4>
+                <p>Somos un hotel de calidad y profesionalismo. Contamos con habitaciones equipadas para ofrecer confort.</p>
+            </div>
+        </div>
+        <div class="derechos">
+            <h4>HOTEL ULEAM @ 2021</h4>
+        </div>
+    </div>
+
+</body>
+</html>
