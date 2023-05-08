@@ -250,7 +250,7 @@ app.get('/logout', function (req, res) {
 	})
 });
 
-
+const PORT = 3000
 app.listen(process.env.PORT, (req, res)=>{
     console.log('SERVER RUNNING IN ');
 });
